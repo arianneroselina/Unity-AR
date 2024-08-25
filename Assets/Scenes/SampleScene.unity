@@ -348,13 +348,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757069004}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.055335008, y: 0.9398289, z: -0.18416095, w: -0.28239083}
+  m_LocalPosition: {x: 0.7571862, y: 0.46382236, z: 11.271606}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1450051347}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 9.299, y: -115.721, z: -4.451}
 --- !u!114 &757069006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,7 +686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SerializedLibrary: {fileID: 11400000, guid: 881c28d821b7a414fbbef7c156a4cdfd, type: 2}
   m_MaxNumberOfMovingImages: 0
-  m_TrackedImagePrefab: {fileID: 0}
+  m_TrackedImagePrefab: {fileID: 135744, guid: 4e7d7ecd1eafb1746a1fcb020505943c, type: 3}
 --- !u!114 &1651894868
 MonoBehaviour:
   m_ObjectHideFlags: 0

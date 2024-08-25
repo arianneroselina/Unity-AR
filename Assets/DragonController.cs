@@ -18,11 +18,27 @@ public class DragonController : MonoBehaviour
         float xVal = fixedJoystick.Horizontal;
         float yVal = fixedJoystick.Vertical;
 
-        Vector3 movement = new Vector3(xVal, 0, yVal);
-        rigidBody.velocity = movement*speed;
+        // Get the camera's forward and right directions
+        Vector3 cameraForward = Camera.main.transform.forward;
+        Vector3 cameraRight = Camera.main.transform.right;
 
-        if (xVal != 0 && yVal != 0) {
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, Mathf.Atan2(xVal, yVal)*Mathf.Rad2Deg, transform.eulerAngles.z);
+        // Flatten the vectors to ignore the y-axis (we only want horizontal movement)
+        cameraForward.y = 0;
+        cameraRight.y = 0;
+
+        // Normalize the vectors to prevent diagonal movement from being faster
+        cameraForward.Normalize();
+        cameraRight.Normalize();
+
+        // Calculate the movement direction relative to the camera
+        Vector3 movement = (cameraForward * yVal + cameraRight * xVal).normalized;
+
+        // Apply movement to the dragon
+        rigidBody.velocity = movement * speed;
+
+        // Rotate the dragon to face the direction of movement
+        if (movement != Vector3.zero) {
+            transform.rotation = Quaternion.LookRotation(movement);
         }
     }
 }
